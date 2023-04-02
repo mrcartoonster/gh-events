@@ -6,6 +6,13 @@ on:
       # - opend
       #  - closed
   workflow_dispatch: # To add workflow_dispatch as a trigger
+  push:
+    branches:
+      - main
+      - 'feature-*' # dev-new dev-this-is-new
+      - 'feat/**' # feat/new feat/new/button
+    paths-ignore:
+      - '.github/workflows/*'
 
 jobs:
   deploy:
